@@ -172,7 +172,47 @@ ul {
 	min-width: 90vh;
 	margin-bottom: 8rem;
 }
-
+/*===== FOOTER STYLES =====*/
+.footer {
+	height: 10rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #f7f7f7;
+	box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
+}
+.btn {
+	height: 7rem;
+	width: 7rem;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	background-color: #ff4747;
+	color: #0e1111;
+}
+.btn__text {
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 1rem 2rem rgba(14, 17, 17, 0.6);
+	cursor: pointer;
+	background-color: #c9030a;
+	color: #ebebeb;
+}
+.btn:active,
+.btn:focus {
+	transform: translateY(-1px);
+	box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
+}
 /*===== Pokemon STYLES =====*/
 .pokeEntry {
 	background-color: var(--clr-white);
