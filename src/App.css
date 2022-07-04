@@ -46,7 +46,7 @@
 	--clr-pink: #fa709a;
 	--clr-red-dark: hsl(360, 67%, 44%);
 	--clr-red-light: hsl(360, 71%, 66%);
-	--clr-green-dark: hsl(125, 67%, 44%);
+	--clr-green-dark: #25bb32;
 	--clr-green: #6df305;
 	--clr-green-light: hsl(125, 71%, 66%);
 
@@ -101,6 +101,7 @@
 html {
 	/*defines what 1rem is*/
 	font-size: 62.5%; /*1rem=10px 10px/16px = 62.5%*/
+	scroll-behavior: smooth;
 }
 body {
 	box-sizing: border-box; /*padding is counted into the width/height of an element*/
@@ -108,6 +109,7 @@ body {
 	padding: 3rem;
 	font-family: "Lato", sans-serif;
 	background-image: linear-gradient(to right bottom, rgba(150, 150, 50, 0.6), rgba(247, 247, 247, 0.8)), url(./images/webb-dark.png);
+	/*background-size: contain;*/
 }
 ul {
 	list-style: none;
@@ -168,6 +170,7 @@ ul {
 	justify-content: space-around; /*adds the extra space around each flex item on all sides*/
 	align-content: center;
 	min-width: 90vh;
+	margin-bottom: 8rem;
 }
 
 /*===== Pokemon STYLES =====*/
@@ -179,8 +182,13 @@ ul {
 	height: 85rem;
 	width: 75rem;
 	margin-top: 10rem;
-	margin-left: auto;
-	margin-right: auto;
+	/*center entry*/
+	/*margin-left: auto;
+	margin-right: auto;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .pokeEntry__header {
 	display: flex;
@@ -261,7 +269,7 @@ ul {
 }
 
 .pokeEntry--grass {
-	background-image: linear-gradient(to right, var(--type-green), var(--type-dark-green));
+	background-image: linear-gradient(to right, var(--clr-green-dark), var(--type-dark-green));
 }
 
 .pokeEntry--fire {
@@ -273,7 +281,7 @@ ul {
 }
 
 .pokeEntry--ice {
-	background-image: linear-gradient(to right, var(--type-blue), var(--type-dark-blue-card));
+	background-image: linear-gradient(to right, var(--type-blue), var(--type-gray));
 }
 
 .pokeEntry--electric {
@@ -281,20 +289,20 @@ ul {
 }
 
 .pokeEntry--psychic {
-	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark-purple));
+	background-image: linear-gradient(to right, var(--clr-pink), var(--type-dark-purple));
 }
 .pokeEntry--fairy {
-	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark-purple));
+	background-image: linear-gradient(to right, var(--clr-pink), var(--type-purple));
 }
 .pokeEntry--ghost {
-	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark-purple));
+	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark));
 }
 
 .pokeEntry--fighting {
-	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown));
+	background-image: linear-gradient(to right, var(--type-dark-red), var(--type-dark-brown));
 }
 .pokeEntry--rock {
-	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown));
+	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown), var(--type-dark-gold));
 }
 .pokeEntry--ground {
 	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown));
@@ -305,7 +313,7 @@ ul {
 	color: var(--clr-white);
 }
 .pokeEntry--poison {
-	background-image: linear-gradient(to right, var(--type-dark), var(--type-dark-dark));
+	background-image: linear-gradient(to right, var(--type-dark-purple), var(--type-dark));
 	color: var(--clr-white);
 }
 
