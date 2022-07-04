@@ -19,6 +19,7 @@
 	--clr-light-grey-1: hsl(210, 22%, 49%);
 	--clr-light-grey-2: hsl(209, 23%, 60%);
 	--clr-light-grey-3: hsl(211, 27%, 70%);
+	--clr-light-grey-4: hsl(210, 25%, 87%);
 	/* dark shades of secondary color*/
 	--clr-dark-blue-1: hsl(205, 86%, 17%);
 	--clr-dark-blue-2: hsl(205, 77%, 27%);
@@ -36,7 +37,7 @@
 	/* other colors */
 	--clr-white: #fff;
 	--clr-black: #000;
-	-clr-grey: #979b91;
+	--clr-grey: #979b91;
 
 	--clr-yellow: #ffcb05;
 	--clr-yellow-dark: #c7a008;
@@ -48,6 +49,37 @@
 	--clr-green-dark: hsl(125, 67%, 44%);
 	--clr-green: #6df305;
 	--clr-green-light: hsl(125, 71%, 66%);
+
+	/* pokemon types */
+	--type-green: #99d98c;
+	--type-dark-green: #76c893;
+
+	--type-red: #ff4747;
+	--type-dark-red: #c9030a;
+
+	--type-blue: #1cadd9;
+	--type-dark-blue-card: #1f8ec1;
+
+	--type-yell: #ffd15c;
+	--type-dark-yell: #fcc55f;
+
+	--type-purple: #b379f6;
+	--type-dark-purple: #9b15f4;
+
+	--type-brown: #c38e6f;
+	--type-dark-brown: #bd764c;
+
+	--type-dark: #6c757d;
+	--type-dark-dark: #495057;
+
+	--type-gray: #dee2e6;
+	--type-dark-gray: #adb5bd;
+
+	--type-gold: #c4a36e;
+	--type-dark-gold: #b89151;
+
+	--gray-light-1: #f7f7f7;
+	--gray-light-2: #eee;
 }
 
 /*======= FONTS =======*/
@@ -159,23 +191,133 @@ ul {
 	text-transform: capitalize;
 	font-size: 3rem;
 	text-align: start;
-	flex: 0 0 28%; /*flex-grow, flex-shrink, flex-basis:size */
+	flex: 0 0 27%; /*flex-grow, flex-shrink, flex-basis:size */
 }
 .pokeEntry__stats {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex: 1 0;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	text-transform: capitalize;
 }
 .pokeEntry__item {
-	margin-left: 0.3rem;
-	font-size: 1.5rem;
+	margin-left: 0.2rem;
+	font-size: 1.3rem;
 }
 .pokeEntry__imgContainer {
 	background-image: url(./images/HGSS_Viridian_Forest-Day.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 40rem;
+	width: 100%;
+	border: 4px solid var(--clr-grey-blue-1);
+	margin: 2rem 0;
+}
+.pokeEntry__img {
+	height: 35rem;
+	width: 35rem;
+	padding: 2rem;
+	margin-top: 2rem;
+}
+.pokeEntry__basics {
+	background-color: var(--clr-light-grey-4);
+	color: var(--clr-grey-blue-1);
+	border: 2px solid var(--clr-grey-blue-1);
+	margin-top: -2rem; /*moves the basics up onto image*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 2.5rem;
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+.pokeEntry__abilities {
+	font-size: 2rem;
+	font-weight: 700;
+	text-transform: capitalize;
+	text-align: start;
+	height: 20rem;
+	margin: 1rem;
+}
+.pokeEntry__ability {
+	padding: 2rem;
+}
+.pokeEntry__types {
+	font-size: 2rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-align: end;
+	height: 10rem;
+	margin: 1rem;
+	display: flex;
+	justify-content: flex-end;
+}
+.pokeEntry__type {
+	padding: 2rem;
+}
+.pokeEntry--bug {
+	background-image: linear-gradient(to right, var(--type-green), var(--type-dark-green));
+}
+
+.pokeEntry--grass {
+	background-image: linear-gradient(to right, var(--type-green), var(--type-dark-green));
+}
+
+.pokeEntry--fire {
+	background-image: linear-gradient(to right, var(--type-red), var(--type-dark-red));
+}
+
+.pokeEntry--water {
+	background-image: linear-gradient(to right, var(--type-blue), var(--type-dark-blue-card));
+}
+
+.pokeEntry--ice {
+	background-image: linear-gradient(to right, var(--type-blue), var(--type-dark-blue-card));
+}
+
+.pokeEntry--electric {
+	background-image: linear-gradient(to right, var(--type-yell), var(--type-dark-yell));
+}
+
+.pokeEntry--psychic {
+	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark-purple));
+}
+.pokeEntry--fairy {
+	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark-purple));
+}
+.pokeEntry--ghost {
+	background-image: linear-gradient(to right, var(--type-purple), var(--type-dark-purple));
+}
+
+.pokeEntry--fighting {
+	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown));
+}
+.pokeEntry--rock {
+	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown));
+}
+.pokeEntry--ground {
+	background-image: linear-gradient(to right, var(--type-brown), var(--type-dark-brown));
+}
+
+.pokeEntry--dark {
+	background-image: linear-gradient(to right, var(--type-dark), var(--type-dark-dark));
+	color: var(--clr-white);
+}
+.pokeEntry--poison {
+	background-image: linear-gradient(to right, var(--type-dark), var(--type-dark-dark));
+	color: var(--clr-white);
+}
+
+.pokeEntry--steel {
+	background-image: linear-gradient(to right, var(--type-gray), var(--type-dark-gray));
+}
+
+.pokeEntry--dragon {
+	background-image: linear-gradient(to right, var(--type-gold), var(--type-dark-gold));
+}
+
+.pokeEntry--normal {
+	background-image: linear-gradient(to right, var(--type-gold), var(--clr-grey));
 }
 
