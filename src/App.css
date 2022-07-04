@@ -37,6 +37,9 @@
 	--clr-white: #fff;
 	--clr-black: #000;
 	-clr-grey: #979b91;
+
+	--clr-yellow: #ffcb05;
+	--clr-yellow-dark: #c7a008;
 	--clr-yellow-light: #ffdd64;
 	--clr-orange: #ff8f00;
 	--clr-pink: #fa709a;
@@ -73,6 +76,9 @@ body {
 	padding: 3rem;
 	font-family: "Lato", sans-serif;
 	background-image: linear-gradient(to right bottom, rgba(150, 150, 50, 0.6), rgba(247, 247, 247, 0.8)), url(./images/webb-dark.png);
+}
+ul {
+	list-style: none;
 }
 /*
 
@@ -130,5 +136,46 @@ body {
 	justify-content: space-around; /*adds the extra space around each flex item on all sides*/
 	align-content: center;
 	min-width: 90vh;
+}
+
+/*===== Pokemon STYLES =====*/
+.pokeEntry {
+	background-color: var(--clr-white);
+	border: 1rem solid var(--clr-yellow);
+	border-radius: 3rem;
+	padding: 5rem;
+	height: 85rem;
+	width: 75rem;
+	margin-top: 10rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pokeEntry__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.pokeEntry__name {
+	text-transform: capitalize;
+	font-size: 3rem;
+	text-align: start;
+	flex: 0 0 28%; /*flex-grow, flex-shrink, flex-basis:size */
+}
+.pokeEntry__stats {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 1 0;
+	font-size: 1.2rem;
+	text-transform: capitalize;
+}
+.pokeEntry__item {
+	margin-left: 0.3rem;
+	font-size: 1.5rem;
+}
+.pokeEntry__imgContainer {
+	background-image: url(./images/HGSS_Viridian_Forest-Day.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 

@@ -15,7 +15,7 @@ const Pokemon = () => {
 
 	const { id, name, height, weight, base_experience } = pokemon;
 
-	//console.log(pokemon.types && pokemon.types[0].type['name']);
+	//console.log(pokemon.types && pokemon.types[0].type["name"]);
 
 	return (
 		<div className={`pokeEntry pokeEntry--${pokemon.types && pokemon.types[0].type["name"]}`}>
