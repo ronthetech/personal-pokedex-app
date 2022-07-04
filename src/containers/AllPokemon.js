@@ -12,7 +12,7 @@ const AllPokemon = () => {
 	}, []);
 	//console.log(Object.entries(pokemons)[3] && Object.entries(pokemons)[3][1]);
 	return (
-		<div>
+		<div className='entries'>
 			<div>
 				{Object.entries(pokemons)[3] &&
 					Object.entries(pokemons)[3][1].map((pokemon, index) => {
