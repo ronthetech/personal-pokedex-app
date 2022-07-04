@@ -6,6 +6,7 @@
 	--dark-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
 	--darkest-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.7);
 	--transition: all 0.4s linear;
+	--transition-slow: all 2s linear;
 	--letter-space-sml: 0.1rem;
 	--letter-space-mid: 0.25rem;
 	--letter-space-lrg: 0.5rem;
