@@ -1,38 +1,133 @@
+/*============VARIABLES=============*/
+:root {
+	/*box-shadow: offset-x|offset-y|blur-radius|color*/
+	--light-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+	--mid-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+	--dark-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+	--darkest-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.7);
+	--transition: all 0.4s linear;
+	--letter-space-sml: 0.1rem;
+	--letter-space-mid: 0.25rem;
+	--letter-space-lrg: 0.5rem;
+	/* grey / blue - used for headings */
+	--clr-grey-blue-1: hsl(209, 61%, 16%);
+	--clr-grey-blue-2: hsl(211, 39%, 23%);
+	--clr-grey-blue-3: hsl(209, 34%, 30%);
+	--clr-grey-blue-4: hsl(209, 28%, 39%);
+	/* light grey used for paragraphs */
+	--clr-light-grey-1: hsl(210, 22%, 49%);
+	--clr-light-grey-2: hsl(209, 23%, 60%);
+	--clr-light-grey-3: hsl(211, 27%, 70%);
+	/* dark shades of secondary color*/
+	--clr-dark-blue-1: hsl(205, 86%, 17%);
+	--clr-dark-blue-2: hsl(205, 77%, 27%);
+	/* secondary/main color */
+	--clr-blue-1: hsl(205, 72%, 37%);
+	--clr-blue-2: hsl(205, 63%, 48%);
+	--clr-blue-3: #49a6e9;
+	--clr-blue-4: #4da1ab;
+	--clr-blue-5: #3056df;
+	/* gradient colors */
+	--grad-blue-green: linear-gradient(to bottom right, #305170, #6dfc6b);
+	--grad-green-blue: linear-gradient(to bottom right, #6dfc6b, #305170);
+	--grad-blue-purple: linear-gradient(to bottom right, #063251, #70306a);
+	--grad-grey-light: linear-gradient(to right bottom, rgba(#f7f7f7, 0.2), rgba(#eee, 0.2));
+	/* other colors */
+	--clr-white: #fff;
+	--clr-black: #000;
+	-clr-grey: #979b91;
+	--clr-yellow-light: #ffdd64;
+	--clr-orange: #ff8f00;
+	--clr-pink: #fa709a;
+	--clr-red-dark: hsl(360, 67%, 44%);
+	--clr-red-light: hsl(360, 71%, 66%);
+	--clr-green-dark: hsl(125, 67%, 44%);
+	--clr-green: #6df305;
+	--clr-green-light: hsl(125, 71%, 66%);
+}
+
+/*======= FONTS =======*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap");
+
+/*======= GLOBAL STYLES =======*/
+/*ensures all the elements default padding and margin are removed*/
+/*makes all pseudo-elements(::before,::after) inherit their parents box-sizing instead of always content-box */
+*,/* * global selector for all elements in html file */
+*::before,/* inserts something before the content has selected*/
+*::after {
+	/* inserts something after the content has selected*/
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+html {
+	/*defines what 1rem is*/
+	font-size: 62.5%; /*1rem=10px 10px/16px = 62.5%*/
+}
+body {
+	box-sizing: border-box; /*padding is counted into the width/height of an element*/
+	text-align: center;
+	padding: 3rem;
+	font-family: "Lato", sans-serif;
+	background-image: linear-gradient(to right bottom, rgba(150, 150, 50, 0.6), rgba(247, 247, 247, 0.8)), url(./images/webb-dark.png);
+}
+/*
+
+*/
+
 .App {
-  text-align: center;
+}
+.primary-heading {
+	font-family: "Miltonian Tattoo", cursive;
+	font-size: 8rem;
+	padding: 2rem;
+	background-image: var(--grad-blue-purple); /*set background img to a linear gradient*/
+	color: transparent; /*gets its color from the background*/
+	/*clip background to only text-which is transparent*/
+	-webkit-background-clip: text;
+	background-clip: text;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*===== PokemonEntry STYLES =====*/
+.entry {
+	height: 30rem;
+	/*width: 30rem;*/ /*removed due to flex*/
+	background-image: var(--grad-blue-green);
+	transition: var(--transition);
+	margin: 2rem;
+	border-radius: 1rem;
+	flex: 0 0 24%; /*flex-grow, flex-shrink, flex-basis:size */
+}
+.entry:hover {
+	background-image: var(--grad-blue-purple);
+	box-shadow: var(--darkest-shadow);
+	cursor: pointer;
+	transform: translateY(-0.75rem);
+}
+.entry:active,
+.entry:focus {
+	transform: translateY(-0.5rem);
+	box-shadow: var(--mid-shadow);
+}
+.entry__title {
+	color: var(--clr-white);
+	font-size: 4rem;
+	font-family: "Poppins", sans-serif;
+	text-transform: capitalize;
+}
+.entry__img {
+	height: 25rem;
+	width: 25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*===== AllPokemon STYLES =====*/
+.cards {
+	display: flex; /*lines up cards in a row*/
+	flex-wrap: wrap; /*makes it so that the row raps to the next line instead of going offscreen and causing scroll*/
+	justify-content: space-around; /*adds the extra space around each flex item on all sides*/
+	align-content: center;
+	min-width: 90vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
