@@ -14,15 +14,20 @@ const AllPokemon = () => {
 	}, []);
 	//console.log(Object.entries(pokemons)[3] && Object.entries(pokemons)[3][1]);
 	return (
-		<div>
-			<div className='entries'>
-				{Object.entries(pokemons)[3] &&
-					Object.entries(pokemons)[3][1].map((pokemon, index) => {
-						return <PokeEntry key={index} {...pokemon} id={index + 1} />;
-					})}
-			</div>
+		<div className='entries'>
+			{pokemons["results"] &&
+				pokemons["results"].map((pokemon, index) => {
+					return <PokeEntry key={index} {...pokemon} id={index + 1} />;
+				})}
 		</div>
 	);
 };
 
 export default AllPokemon;
+
+/* <div className='entries'>
+			{Object.entries(pokemons)[3] &&
+				Object.entries(pokemons)[3][1].map((pokemon, index) => {
+					return <PokeEntry key={index} {...pokemon} id={index + 1} />;
+				})}
+		</div> */

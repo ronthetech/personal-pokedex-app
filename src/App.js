@@ -10,7 +10,7 @@ const App = () => {
 			<Router>
 				<h1 className='primary-heading'>Personal Pokedex</h1>
 				<Routes>
-					<Route path='/pokemon/:id' element={<Pokemon />} />
+					<Route path='pokemon/:id' element={<Pokemon />} />
 					<Route path='/' element={<AllPokemon />} />
 				</Routes>
 			</Router>
