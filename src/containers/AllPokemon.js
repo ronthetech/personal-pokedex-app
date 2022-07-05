@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import PokeEntry from "../components/PokeEntry";
 import { getPokemons, getMorePokemons } from "../services/pokemons";
-
 import "../App.css";
 
 const AllPokemon = () => {
@@ -16,6 +15,9 @@ const AllPokemon = () => {
 	}, []);
 
 	const morePokemon = () => {
+		//console.log(pokemons);
+		//console.log(pokemons.results);
+		//console.log(pokemons.next);
 		getMorePokemons(count + 19).then((data) => {
 			setPokemons(data);
 			setCount((prevCount) => {
@@ -40,7 +42,7 @@ const AllPokemon = () => {
 			<div className='entries'>
 				{pokemons["results"] &&
 					pokemons["results"].map((pokemon, index) => {
-						return <PokeEntry key={index} {...pokemon} id={index + 1} />;
+						return <PokeEntry key={index} {...pokemon} id={count + index} />;
 					})}
 			</div>
 			<div className='footer'>
