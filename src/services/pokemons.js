@@ -1,5 +1,5 @@
 const URL = "https://pokeapi.co/api/v2/pokemon";
-const URL2 = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20";
+// const URL2 = "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20";
 
 // export const getPokemons = async () => {
 // 	const response = await fetch(URL);
@@ -18,7 +18,7 @@ export const getPokemons = () => {
 // 	return await response.json();
 // };
 export const getMorePokemons = (count) => {
-	return fetch(`${URL}?offset=${count}&limit=20`)
+	return fetch(`${URL}?offset=${count}&limit=30`)
 		.then((response) => response.json())
 		.catch((err) => {
 			console.log("error reading data:" + err);

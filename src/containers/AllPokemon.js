@@ -16,7 +16,7 @@ const AllPokemon = () => {
 
 	const morePokemon = () => {
 		//console.log(pokemons);
-		//console.log(pokemons.results);
+		//console.log(pokemons.results[0].species);
 		//console.log(pokemons.next);
 		getMorePokemons(count + 19).then((data) => {
 			setPokemons(data);
