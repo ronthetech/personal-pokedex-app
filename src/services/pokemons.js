@@ -18,7 +18,7 @@ export const getPokemons = () => {
 // 	return await response.json();
 // };
 export const getMorePokemons = (count) => {
-	return fetch(`${URL}?offset=${count}&limit=30`)
+	return fetch(`${URL}?offset=${count}&limit=20`)
 		.then((response) => response.json())
 		.catch((err) => {
 			console.log("error reading data:" + err);
