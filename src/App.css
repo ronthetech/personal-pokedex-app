@@ -18,11 +18,11 @@
 	/* light grey used for paragraphs */
 	--clr-light-grey-1: hsl(210, 22%, 49%);
 	--clr-light-grey-2: hsl(209, 23%, 60%);
-	--clr-light-grey-3: hsl(211, 27%, 70%);
+	--clr-light-grey-3: #9eb2c7;
 	--clr-light-grey-4: hsl(210, 25%, 87%);
 	/* dark shades of secondary color*/
-	--clr-dark-blue-1: hsl(205, 86%, 17%);
-	--clr-dark-blue-2: hsl(205, 77%, 27%);
+	--clr-dark-blue-1: #063251;
+	--clr-dark-blue-2: #104e7a;
 	/* secondary/main color */
 	--clr-blue-1: hsl(205, 72%, 37%);
 	--clr-blue-2: hsl(205, 63%, 48%);
@@ -114,9 +114,6 @@ body {
 ul {
 	list-style: none;
 }
-/*
-
-*/
 
 .App {
 }
@@ -217,6 +214,7 @@ ul {
 	transform: translateY(-1px);
 	box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
 }
+
 /*===== Pokemon STYLES =====*/
 .pokeEntry {
 	background-color: var(--clr-white);
@@ -225,7 +223,7 @@ ul {
 	padding: 5rem;
 	height: 85rem;
 	width: 75rem;
-	margin-top: 10rem;
+	margin-top: 7rem;
 	/*center entry*/
 	/*margin-left: auto;
 	margin-right: auto;*/
@@ -236,13 +234,14 @@ ul {
 }
 .pokeEntry__header {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
 }
 .pokeEntry__name {
 	text-transform: capitalize;
 	font-size: 3rem;
 	text-align: start;
+	margin-left: 0.2rem;
 	flex: 0 0 27%; /*flex-grow, flex-shrink, flex-basis:size */
 }
 .pokeEntry__stats {
@@ -250,12 +249,13 @@ ul {
 	justify-content: space-between;
 	align-items: center;
 	flex: 1 0;
-	font-size: 1.3rem;
+	gap: 1rem;
+	font-size: 1.8rem;
 	text-transform: capitalize;
 }
 .pokeEntry__item {
 	margin-left: 0.2rem;
-	font-size: 1.3rem;
+	font-size: 1.8rem;
 }
 .pokeEntry__imgContainer {
 	background-image: url(./images/HGSS_Viridian_Forest-Day.png);
@@ -267,10 +267,9 @@ ul {
 	margin: 2rem 0;
 }
 .pokeEntry__img {
-	height: 35rem;
-	width: 35rem;
+	height: 40rem;
+	width: 45rem;
 	padding: 2rem;
-	margin-top: 2rem;
 }
 .pokeEntry__basics {
 	background-color: var(--clr-light-grey-4);
@@ -307,6 +306,88 @@ ul {
 }
 .pokeEntry__type {
 	padding: 2rem;
+}
+@media screen and (max-width: 430px) {
+	.primary-heading {
+		font-size: 4rem;
+		padding: 0.5rem;
+	}
+	.entries {
+	}
+	.entry {
+		height: 30rem;
+		margin: 1rem;
+	}
+	.entry__title {
+		font-size: 3rem;
+	}
+	.entry__img {
+		height: 20rem;
+		width: 20rem;
+	}
+	.pokeEntry {
+		border: 0.5rem solid var(--clr-yellow);
+		height: 47rem;
+		width: 30rem;
+		padding: 0.5rem;
+		margin-top: 6rem;
+	}
+	.pokeEntry__header {
+		flex-direction: column;
+	}
+	.pokeEntry__name {
+		margin-bottom: 1rem;
+		font-size: 2.5rem;
+		flex: 0 0 27%; /*flex-grow, flex-shrink, flex-basis:size */
+	}
+	.pokeEntry__stats {
+		flex-wrap: wrap;
+		column-gap: 2rem;
+		font-size: 1.5rem;
+	}
+	.pokeEntry__item {
+		margin-left: 0.5rem;
+		font-size: 1.3rem;
+	}
+	.pokeEntry__imgContainer {
+		height: 20rem;
+	}
+	.pokeEntry__img {
+		height: 20rem;
+		width: 20rem;
+		padding: 1rem;
+		margin-top: 0.5rem;
+	}
+	.pokeEntry__basics {
+		background-color: var(--clr-light-grey-4);
+		color: var(--clr-grey-blue-1);
+		border: 2px solid var(--clr-grey-blue-1);
+		margin-top: -2rem; /*moves the basics up onto image*/
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 2.5rem;
+		font-size: 1.4rem;
+		font-weight: 600;
+	}
+	.pokeEntry__abilities {
+		font-size: 1.5rem;
+		height: 4rem;
+		margin: 1rem;
+	}
+	.pokeEntry__ability {
+		padding: 0.5rem;
+	}
+	.pokeEntry__types {
+		font-size: 1.25rem;
+		height: 5rem;
+	}
+	.pokeEntry__type {
+		padding: 1rem;
+	}
+	.footer {
+		width: 100%;
+	}
 }
 .pokeEntry--bug {
 	background-image: linear-gradient(to right, var(--type-green), var(--type-dark-green));
